@@ -47,7 +47,7 @@ cite{
     &::before{
         content: "";
         width: 100%;
-        height: 120%;
+        height: 130%;
     position: absolute;
 
     top: -10%;
@@ -128,4 +128,70 @@ cite{
         top: 40%;
         left: 33%;
     }
+}
+
+.facts-and-articles {
+margin-bottom: 20%;
+    position: relative;
+    z-index: 5;
+    padding: 2rem;
+    border-radius: 8px;
+    margin: 20px auto;
+    max-width: 100%;
+   
+    font-family: Arial, sans-serif;
+    color: #333;
+    &::before{
+        content: "";
+        width: 100%;
+        height: 120%;
+    position: absolute;
+    left: 0;
+    top: -10%;
+    background-image: url("assets/images/bottom2.svg");
+    background-size: cover;
+    z-index: 0;
+}}
+
+.facts-and-articles h2 {
+    position: relative;
+    z-index: 5;
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    color: #0077cc;
+}
+
+.facts-list,
+.articles-list {
+    position: relative;
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+.facts-list li {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    color: #555;
+}
+
+.articles-list li {
+    margin-bottom: 10px;
+    list-style-type: none;
+}
+
+.articles-list a {
+    color: #0077cc;
+    text-decoration: none;
+    font-size: 1.1em;
+}
+
+.articles-list a:hover {
+    text-decoration: underline;
+}
+
+.source {
+    font-style: italic;
+    color: #777;
+    font-size: 0.9em;
 }
