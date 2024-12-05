@@ -1,197 +1,132 @@
-body{
-    font-family: 'Roboto';
-    background-color: rgb(84, 202, 229) ;
-
-    
-}
-*{
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
+    color: #333;
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    padding: 20px;
 }
-section{
-    position: relative;
-    z-index: 1;
-}
-#home{
-  height: 80vh;
-  background-color: rgb(84, 202, 229) ;
-  z-index: 1;
 
-  &::before{
-    content: "";
+.container {
+    max-width: 600px;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+h1 {
+    color: #007BFF;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+#counter {
+    font-size: 24px;
+    margin-top: 10px;
+    color: #333;
+}
+
+#selected-portions, #reconstruction-zone {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+    min-height: 50px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.portion {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: grab;
+    user-select: none;
+}
+.highlight {
+    background-color: #007BFF;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: bold;
+}
+
+#hash{
+    font-size: 22px;
+    letter-spacing: 1px;
+}
+
+/* Icône d'information dans le coin supérieur droit */
+.info-icon {
     position: absolute;
-    top: 0;
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* Modale d'explication */
+.modal {
+    display: none; /* Caché par défaut */
+    position: fixed;
+    z-index: 1; /* S'assurer que la modale est au-dessus des autres éléments */
     left: 0;
+    top: 0;
     width: 100%;
     height: 100%;
-    background-image: url("assets/images/topSoleil.svg");
-    background-repeat: no-repeat;
-    background-position: top left;
-    background-size: cover;
-    background-size: 50%;
-  }
- h1{
-position: relative;
-  font-size: 4rem;
-  z-index: 30;
-  height: 50%;
-  display: flex;
-  align-items: center;
+    background-color: rgba(0,0,0,0.4); /* Arrière-plan semi-transparent */
 }
 
-cite{
-  font-size: 2rem;
-}}
-.bottom1{
-    &::before{
-        content: "";
-        width: 100%;
-        height: 130%;
-    position: absolute;
-
-    top: -10%;
-    background-image: url("assets/images/bottom1.svg");
-    background-size: cover;
-    z-index: 0;
-}}
-.bodyOceanContainer{
-    height: 50vh;
-    width: 100vw;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+/* Contenu de la modale */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.3s ease;
 }
 
-.bodyContainer{
-    width: min-content;
-    height: 100%;
-    width: 30%;
-    min-width: 30%;
-    min-height: 100%;
-    background-image: url("assets/images/Silhouette.svg");
-    background-repeat: no-repeat;
-    position: relative;
-    background-position: center;
-
-   
-}
-.explications{
-    position: relative;
-    z-index: 5;
-    width: 33%;
-    left: 0;
-    &*{
-        font-size: 1rem;
-    }
-    .illustrationCorps{
-        object-fit: contain;
-        width: 100%;
-        margin-right: 0;
-        margin-top: 0;
-    }
-}
-
-
-.organImg{
+/* Style pour le bouton de fermeture de la modale */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
     cursor: pointer;
-    height: 20%;
-    position: absolute;
-    filter: grayscale(80%);
-    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 1s;
-    &:hover{
-        filter: grayscale(0%);
-        transform: scale(1.1);
-        transition: cubic-bezier(0.075, 0.82, 0.165, 1) 1s;
-    }
-
-    &.heart{
-        height: 22%;
-        top: 18%;
-        right: 35%;
-        z-index: 1;
-
-        &:hover{
-            filter: grayscale(0%);
-            transform: scale(1.1);
-            transition: cubic-bezier(0.075, 0.82, 0.165, 1) 1s;
-        }
-    }
-    &.lungs{
-        height: 40%;
-        top: 8%;
-        left: 33%;
-        
-    }
-    &.stomach{
-        height: 35%;
-        top: 40%;
-        left: 33%;
-    }
 }
 
-.facts-and-articles {
-margin-bottom: 20%;
-    position: relative;
-    z-index: 5;
-    padding: 2rem;
-    border-radius: 8px;
-    margin: 20px auto;
-    max-width: 100%;
-   
-    font-family: Arial, sans-serif;
-    color: #333;
-    &::before{
-        content: "";
-        width: 100%;
-        height: 120%;
-    position: absolute;
-    left: 0;
-    top: -10%;
-    background-image: url("assets/images/bottom2.svg");
-    background-size: cover;
-    z-index: 0;
-}}
-
-.facts-and-articles h2 {
-    position: relative;
-    z-index: 5;
-    font-size: 1.8em;
-    margin-bottom: 15px;
-    color: #0077cc;
-}
-
-.facts-list,
-.articles-list {
-    position: relative;
-    list-style-type: disc;
-    padding-left: 20px;
-    margin-bottom: 20px;
-}
-
-.facts-list li {
-    margin-bottom: 10px;
-    font-size: 1.1em;
-    color: #555;
-}
-
-.articles-list li {
-    margin-bottom: 10px;
-    list-style-type: none;
-}
-
-.articles-list a {
-    color: #0077cc;
+.close:hover,
+.close:focus {
+    color: black;
     text-decoration: none;
-    font-size: 1.1em;
+    cursor: pointer;
 }
 
-.articles-list a:hover {
-    text-decoration: underline;
+/* Animation d'apparition de la modale */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
-.source {
-    font-style: italic;
-    color: #777;
-    font-size: 0.9em;
-}

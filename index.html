@@ -1,108 +1,55 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <script src="./humain.js"></script>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-      rel="stylesheet"
-    />
-    <title>Super ocean pro max mes couilles</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <header></header>
-    <main>
-      <section id="home">
-        <h1>Et si les océans étaient le corps de notre planète ?</h1>
-        <cite
-          >Comme notre corps, l’océan est un système complexe. Quand il est
-          pollué, il se dérègle. Découvrez comment ils fonctionnent en
-          parallèle.</cite
-        >
-      </section>
-      <section id="bodyOcean" class="bottom1">
-        <h2>Le fonctionnement de l'ocean</h2>
-        <div class="bodyOceanContainer">
-          <div class="bodyContainer">
-            <img onmouseover=" changeHeart()"
-              src="assets/images/Coeur.svg"
-              alt="Coeur"
-              class="organImg heart"
-            />
-            <img
-            onmouseover="changeLungs()"
-              src="assets/images/Poumon.svg"
-              alt="Poumons"
-              class="organImg lungs"
-            />
-            <img
-            onmouseover="changeStomach()"
-              src="assets/images/Estomac.svg"
-              alt="Estomac"
-              class="organImg stomach"
-            />
-          </div>
-          <div class="explications">
-            <article >
-
-              <h3 class="titreCorps">Les poumons : Les récifs corralliens</h3> 
-             <p class="explicationsCorps"> Les poumons assurent
-              l’oxygénation du sang, tout comme les récifs coralliens jouent un
-              rôle vital dans la production d’oxygène. Les récifs, grâce aux
-              algues symbiotiques qu’ils abritent, contribuent à la
-              photosynthèse et produisent une part significative de l’oxygène
-              mondial. Les deux fonctionnent comme des systèmes de filtration,
-              en purifiant et en redistribuant des éléments essentiels à la vie.</p>
-              <img class="illustrationCorps" src="assets/images/corail.webp" alt="corail" />
-            </article>
-          </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sopra Steria Mérignac - Nuit de l'info 2024</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome pour les icônes -->
+</head>
+<body>
+    <div class="container">
+        <!-- Icône d'information dans le coin supérieur droit -->
+        <div id="info-icon" class="info-icon">
+            <i class="fas fa-info-circle"></i>
         </div>
-      </section>
-      <section class="facts-and-articles">
-        <div class="bottom2">    </div>
 
-        <h2>🌊 À savoir sur la pollution des océans</h2>
-        <ul class="facts-list">
-            <li>Chaque année, 8 millions de tonnes de plastique finissent dans les océans.</li>
-            <li>Les microplastiques sont retrouvés dans 100% des échantillons d’eau potable.</li>
-            <li>Les océans produisent 50% de l’oxygène que nous respirons grâce au phytoplancton.</li>
-            <li>Si la pollution continue, il pourrait y avoir plus de plastique que de poissons dans l'océan d'ici 2050.</li>
-        </ul>
-    
-        <h2>📰 Articles récents</h2>
-        <ul class="articles-list">
-            <li>
-                <a href="https://www.nationalgeographic.fr/environnement/pollution-plastique" target="_blank">
-                    Comment réduire la pollution plastique ? 
-                    <span class="source">(National Geographic)</span>
-                </a>
-            </li>
-            <li>
-                <a href="https://www.lemonde.fr/planete/oceans-urgence-ecologique" target="_blank">
-                    Les océans : une urgence écologique mondiale 
-                    <span class="source">(Le Monde)</span>
-                </a>
-            </li>
-            <li>
-                <a href="https://www.wwf.fr/vous-informer/actualites/les-microplastiques-dans-nos-oceans" target="_blank">
-                    Les impacts des microplastiques sur la chaîne alimentaire 
-                    <span class="source">(WWF France)</span>
-                </a>
-            </li>
-        </ul>
-    </section>
-    
-      <section id="contact">
-        <h2>Contact</h2>
-        <p>Comment nous contacter.</p>
-      </section>
-    </main>
-    <footer>
-      <p>&copy; 2023 Mon Site Web. Tous droits réservés.</p>
-    </footer>
-  </body>
+        <!-- Modale d'explication -->
+        <div id="info-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Comment résoudre le CAPTCHA ?</h2>
+                <p>Voici comment résoudre le CAPTCHA :</p>
+                <ul>
+                    <li>Un mot aléatoire est affiché, et vous devez l'écrire à partir du hash généré.</li>
+                    <li>Le hash est une chaîne de caractères que vous pouvez couper en portions de taille correspondante au chiffre du compteur lors de son arrêt.</li>
+                    <li>Vous devez collecter ces portions et les placer dans l'ordre correct dans la zone de reconstruction.</li>
+                    <li>Utilisez le bouton "Stop" pour stopper le compteur puis sélectionnez une portion du hash en cliquant dessus avec la souris.</li>
+                    <li>Lorsque vous pensez avoir reconstruit le mot, cliquez sur "Vérifier".</li>
+                </ul>cd                     
+            </div>
+        </div>
+
+        <h1>Un Super Captcha</h1>
+        <div id="game">
+            <p><strong>Pour valider le capcha, merci d'écrire le mot :</strong> <span id="target-word"></span></p>
+            <p><strong>Hash généré :</strong> <span id="hash"></span></p>
+            <button id="generate-hash">Générer un hash</button>
+            <button id="stop-counter" disabled>Stop!</button>
+            <p><strong>Taille de la portion à recupérer</strong></p>
+            <div id="counter">0</div>
+
+            <h3>Portions sélectionnées :</h3>
+            <div id="selected-portions"></div>
+
+            <h3>Zone de reconstruction :</h3>
+            <p id="countdown"></p>
+            <div id="reconstruction-zone"></div>
+
+            <button id="check-word" disabled>Vérifier</button>
+        </div>
+        <div id="result"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
 </html>
