@@ -3,7 +3,20 @@
     height: 70vh;
     background-size: contain;
     background-repeat: no-repeat;
+    position: relative;
 }
 .organImg{
-    height: 30%;
+    height: 20%;
+    position: absolute;
+    &.heart{
+        height: 15%;
+        top: 35%;
+        left: 15%;
+        z-index: 1;
+    }
+    &.lungs{
+        height: 30%;
+        top: 30%;
+        left: 12%;
+    }
 }
