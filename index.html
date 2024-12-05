@@ -1,54 +1,78 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script src="./humain.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
     <title>Super ocean pro max mes couilles</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header>
-        <h1>Et si les océans étaient le corps de notre planète ?
-        </h1>
-        <cite>Comme notre corps, l’océan est un système complexe. Quand il est pollué, il se dérègle. Découvrez comment ils fonctionnent en parallèle.</cite>
-        <nav>
-            <ul>
-                <li><a href="#home">Accueil</a></li>
-                <li><a href="#bodyOcean">L'ocean comme notre corps</a></li>
-                <li><a href="#services">Que pouvons nous faire ?</a></li>
-                <li><a href="#contact">T'as tout compris chacal ?</a></li>
-            </ul>
-        </nav>
-    </header>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header></header>
     <main>
-        <section id="home">
-            <h2>Accueil</h2>
-            <p></p>
-        </section>
-        <section id="bodyOcean">
-            <h2>Le fonctionnement de l'ocean</h2>
-            <div class="bodyOceanContainer">
-            <div class="bodyContainer">
-                    <img src="assets/images/heart.png" alt="Coeur" class="organImg heart">
-                    <img src="assets/images/lungs.png" alt="Poumons" class="organImg lungs">
-                    <img src="assets/images/stomach.png" alt="Estomac" class="organImg stomach">
-            </div>
-        <div class="explications">
+      <section id="home">
+        <h1>Et si les océans étaient le corps de notre planète ?</h1>
+        <cite
+          >Comme notre corps, l’océan est un système complexe. Quand il est
+          pollué, il se dérègle. Découvrez comment ils fonctionnent en
+          parallèle.</cite
+        >
+      </section>
+      <section id="bodyOcean" class="bottom1">
+        <h2>Le fonctionnement de l'ocean</h2>
+        <div class="bodyOceanContainer">
+          <div class="bodyContainer">
+            <img onmouseover=" changeHeart()"
+              src="assets/images/Coeur.svg"
+              alt="Coeur"
+              class="organImg heart"
+            />
+            <img
+            onmouseover="changeLungs()"
+              src="assets/images/Poumon.svg"
+              alt="Poumons"
+              class="organImg lungs"
+            />
+            <img
+            onmouseover="changeStomach()"
+              src="assets/images/Estomac.svg"
+              alt="Estomac"
+              class="organImg stomach"
+            />
+          </div>
+          <div class="explications">
+            <article >
 
+              <h3 class="titreCorps">Les poumons : Les récifs corralliens</h3> 
+             <p class="explicationsCorps"> Les poumons assurent
+              l’oxygénation du sang, tout comme les récifs coralliens jouent un
+              rôle vital dans la production d’oxygène. Les récifs, grâce aux
+              algues symbiotiques qu’ils abritent, contribuent à la
+              photosynthèse et produisent une part significative de l’oxygène
+              mondial. Les deux fonctionnent comme des systèmes de filtration,
+              en purifiant et en redistribuant des éléments essentiels à la vie.</p>
+              <img class="illustrationCorps" src="assets/images/corail.webp" alt="corail" />
+            </article>
+          </div>
         </div>
-        </div>
-        </section>
-        <section id="services">
-            <h2>Services</h2>
-            <p>Les services que nous offrons.</p>
-        </section>
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>Comment nous contacter.</p>
-        </section>
+      </section>
+      <section id="services">
+        <h2>Services</h2>
+        <p>Les services que nous offrons.</p>
+      </section>
+      <section id="contact">
+        <h2>Contact</h2>
+        <p>Comment nous contacter.</p>
+      </section>
     </main>
     <footer>
-        <p>&copy; 2023 Mon Site Web. Tous droits réservés.</p>
+      <p>&copy; 2023 Mon Site Web. Tous droits réservés.</p>
     </footer>
-</body>
+  </body>
 </html>
