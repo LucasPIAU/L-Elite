@@ -1,0 +1,9 @@
+.bodyContainer{
+    background-image: url('assets/images/silhouette.png');
+    height: 70vh;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.organImg{
+    height: 30%;
+}
