@@ -1,7 +1,9 @@
 body {
     font-family: 'Roboto';
     background-color: rgb(157, 196, 205);
+    width: 100%;
 }
+
 
 * {
     margin: 0;
