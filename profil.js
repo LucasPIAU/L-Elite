@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
     fetch('badges.json') 
         .then(response => {
             if (!response.ok) {
-                throw new Error('Failed to load badges JSON');
+                throw new Error('Fichier Introuvable (badges.json)');
             }
             return response.json(); 
         })
