@@ -1,4 +1,4 @@
-const words = ["arbre", "soleil", "chocolat", "ordinateur", "python", "javascript"];
+const words = ["arbre", "soleil", "chocolat", "ordinateur", "python", "javascript", "beurre", "ocean", "refresh", "powershell"];
 let targetWord = "";
 let shuffledString = "";
 let selectedPortions = [];
@@ -194,9 +194,9 @@ document.getElementById("check-word").addEventListener("click", () => {
         .join("");
 
     if (reconstructedWord === targetWord) {
-        document.getElementById("result").textContent = "🎉 Bravo ! Tu as reconstitué le mot.";
         clearInterval(interval);
         clearInterval(countdownInterval);
+        window.location.href = "congrats.html";
     } else {
         document.getElementById("result").textContent = "❌ Ce n'est pas correct. Continue !";
     }
