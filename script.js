@@ -11,7 +11,47 @@ let countdownInterval;
 let initialOrder = [];
 const infoIcon = document.getElementById("info-icon");
 const modal = document.getElementById("info-modal");
+const confirmationModal = document.getElementById("confirmation-modal");
+const confirmBtn = document.getElementById("confirm-btn");
+const cancelBtn = document.getElementById("cancel-btn");
 const closeModal = document.getElementsByClassName("close")[0];
+
+// Fonction pour ouvrir la modal de confirmation
+function openConfirmationModal(action) {
+    confirmationModal.style.display = "block"; // Afficher la modal
+    actionToExecute = action; // Sauvegarder l'action à exécuter après confirmation
+}
+
+// Fonction pour fermer la modal de confirmation
+function closeConfirmationModal() {
+    confirmationModal.style.display = "none"; // Cacher la modal
+    actionToExecute = null; // Réinitialiser l'action après fermeture de la modal
+}
+
+// Lorsque l'utilisateur clique sur "Oui", exécuter l'action
+confirmBtn.addEventListener("click", () => {
+    if (actionToExecute) {
+        actionToExecute(); // Exécuter l'action sauvegardée
+    }
+    closeConfirmationModal(); // Fermer la modal après exécution
+});
+
+// Lorsque l'utilisateur clique sur "Non", fermer la modal sans exécuter l'action
+cancelBtn.addEventListener("click", () => {
+    closeConfirmationModal(); // Fermer la modal
+});
+
+// Lorsque l'utilisateur clique sur "X", fermer la modal
+closeModal.addEventListener("click", () => {
+    closeConfirmationModal(); // Fermer la modal
+});
+
+// Lorsque l'utilisateur clique en dehors de la modal, fermer la modal
+window.addEventListener("click", (event) => {
+    if (event.target === confirmationModal) {
+        closeConfirmationModal(); // Fermer la modal si l'utilisateur clique à l'extérieur
+    }
+});
 
 // Fonction pour mélanger une chaîne de caractères
 function shuffleString(str) {
@@ -55,27 +95,29 @@ function initGame() {
 
 // Gérer le clic sur "Générer un shuffled string"
 document.getElementById("generate-shuffledString").addEventListener("click", () => {
-    shuffledString = generateShuffledString();
-    document.getElementById("shuffledString").textContent = shuffledString;
-    document.getElementById("stop-counter").disabled = true;
-    document.getElementById("generate-shuffledString").disabled = true;
+    openConfirmationModal(() => {
+        shuffledString = generateShuffledString();
+        document.getElementById("shuffledString").textContent = shuffledString;
+        document.getElementById("stop-counter").disabled = true;
+        document.getElementById("generate-shuffledString").disabled = true;
 
-    // Réinitialiser le compteur
-    clearInterval(interval);
-    document.getElementById("counter").textContent = "";
+        // Réinitialiser le compteur
+        clearInterval(interval);
+        document.getElementById("counter").textContent = "";
 
-    // Démarrer le "compteur" après un délai de 2 secondes
+        // Démarrer le "compteur" après un délai de 2 secondes
 
-    isCounterRunning = true;
-    document.getElementById("stop-counter").disabled = false;
-    const randomValue = generateUniqueRandom(1, targetWord.length);
-    document.getElementById("counter").textContent = randomValue;
-
-    interval = setInterval(() => {
+        isCounterRunning = true;
+        document.getElementById("stop-counter").disabled = false;
         const randomValue = generateUniqueRandom(1, targetWord.length);
         document.getElementById("counter").textContent = randomValue;
-    }, 500); // Changement toutes les 500 ms
 
+        interval = setInterval(() => {
+            const randomValue = generateUniqueRandom(1, targetWord.length);
+            document.getElementById("counter").textContent = randomValue;
+        }, 500); // Changement toutes les 500 ms
+
+    })
 });
 
 // Gérer le clic sur "Stop!"
@@ -114,40 +156,42 @@ function handleShuffledStringHover(event) {
 
 // Gérer le clic sur le shuffled string pour confirmer une portion
 function handleShuffledStringClick(event) {
-    const shuffledStringElement = document.getElementById("shuffledString");
-    const startIndex = getCharIndexFromMouse(event, shuffledStringElement);
-    const length = parseInt(document.getElementById("counter").textContent, 10) || 0;
-    const endIndex = Math.min(startIndex + length, shuffledString.length);
+    openConfirmationModal(() => {
+        const shuffledStringElement = document.getElementById("shuffledString");
+        const startIndex = getCharIndexFromMouse(event, shuffledStringElement);
+        const length = parseInt(document.getElementById("counter").textContent, 10) || 0;
+        const endIndex = Math.min(startIndex + length, shuffledString.length);
 
-    // Extraire la portion
-    const selection = shuffledString.slice(startIndex, endIndex);
-    selectedPortions.push(selection);
+        // Extraire la portion
+        const selection = shuffledString.slice(startIndex, endIndex);
+        selectedPortions.push(selection);
 
-    // Afficher la portion sélectionnée
-    const portionDiv = document.createElement("div");
-    portionDiv.textContent = selection;
-    portionDiv.classList.add("portion");
-    portionDiv.draggable = true;
+        // Afficher la portion sélectionnée
+        const portionDiv = document.createElement("div");
+        portionDiv.textContent = selection;
+        portionDiv.classList.add("portion");
+        portionDiv.draggable = true;
 
-    // Ajouter la gestion du drag & drop
-    portionDiv.addEventListener("dragstart", (e) => {
-        e.dataTransfer.setData("text", e.target.textContent);
-        e.target.classList.add("dragging");
-    });
+        // Ajouter la gestion du drag & drop
+        portionDiv.addEventListener("dragstart", (e) => {
+            e.dataTransfer.setData("text", e.target.textContent);
+            e.target.classList.add("dragging");
+        });
 
-    portionDiv.addEventListener("dragend", (e) => {
-        e.target.classList.remove("dragging");
-    });
+        portionDiv.addEventListener("dragend", (e) => {
+            e.target.classList.remove("dragging");
+        });
 
-    document.getElementById("selected-portions").appendChild(portionDiv);
+        document.getElementById("selected-portions").appendChild(portionDiv);
 
-    // Réinitialiser le shuffled string et désactiver les événements
-    shuffledStringElement.textContent = shuffledString;
-    shuffledStringElement.style.cursor = "default";
-    shuffledStringElement.removeEventListener("mousemove", handleShuffledStringHover);
-    shuffledStringElement.removeEventListener("click", handleShuffledStringClick);
+        // Réinitialiser le shuffled string et désactiver les événements
+        shuffledStringElement.textContent = shuffledString;
+        shuffledStringElement.style.cursor = "default";
+        shuffledStringElement.removeEventListener("mousemove", handleShuffledStringHover);
+        shuffledStringElement.removeEventListener("click", handleShuffledStringClick);
 
-    document.getElementById("check-word").disabled = false;
+        document.getElementById("check-word").disabled = false;
+    })
 }
 
 // Calculer l'index d'un caractère à partir de la position de la souris
@@ -189,17 +233,19 @@ function getDragAfterElement(container, x) {
 
 // Gérer le clic sur "Vérifier"
 document.getElementById("check-word").addEventListener("click", () => {
-    const reconstructedWord = Array.from(reconstructionZone.children)
-        .map((block) => block.textContent)
-        .join("");
+    openConfirmationModal(() => {
+        const reconstructedWord = Array.from(reconstructionZone.children)
+            .map((block) => block.textContent)
+            .join("");
 
-    if (reconstructedWord === targetWord) {
-        clearInterval(interval);
-        clearInterval(countdownInterval);
-        window.location.href = "congrats.html";
-    } else {
-        document.getElementById("result").textContent = "❌ Ce n'est pas correct. Continue !";
-    }
+        if (reconstructedWord === targetWord) {
+            clearInterval(interval);
+            clearInterval(countdownInterval);
+            window.location.href = "congrats.html";
+        } else {
+            document.getElementById("result").textContent = "❌ Ce n'est pas correct. Continue !";
+        }
+    })
 });
 
 function startCountdown() {
@@ -248,7 +294,9 @@ function arraysEqual(arr1, arr2) {
 }
 
 infoIcon.addEventListener("click", () => {
-    modal.style.display = "block";
+    openConfirmationModal(()=>{
+        modal.style.display = "block";
+    })
 });
 
 // Lorsque l'utilisateur clique sur la croix de fermeture, la modale se ferme
