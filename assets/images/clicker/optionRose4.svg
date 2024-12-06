@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 621 209" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,-1825.97,-637)">
+        <g transform="matrix(0.338623,0,0,0.666165,1718.38,-459.749)">
+            <g transform="matrix(2.95313,0,0,1.50113,-5085.83,1466.23)">
+                <path d="M2445,125.716C2445,122.561 2442.44,120 2439.28,120L2296.72,120C2293.56,120 2291,122.561 2291,125.716L2291,177.284C2291,180.439 2293.56,183 2296.72,183L2439.28,183C2442.44,183 2445,180.439 2445,177.284L2445,125.716Z" style="fill:rgb(146,49,141);"/>
+                <clipPath id="_clip1">
+                    <path d="M2445,125.716C2445,122.561 2442.44,120 2439.28,120L2296.72,120C2293.56,120 2291,122.561 2291,125.716L2291,177.284C2291,180.439 2293.56,183 2296.72,183L2439.28,183C2442.44,183 2445,180.439 2445,177.284L2445,125.716Z"/>
+                </clipPath>
+                <g clip-path="url(#_clip1)">
+                    <g transform="matrix(1,0,0,1,40.7988,1.24079)">
+                        <text x="2301px" y="170px" style="font-family:'Arial-BoldMT', 'Arial', sans-serif;font-weight:700;font-size:55.88px;fill:white;">150</text>
+                    </g>
+                </g>
+            </g>
+            <g transform="matrix(2.95313,0,0,1.50113,-5327.4,1454.92)">
+                <text x="2044px" y="189.709px" style="font-family:'Arial-BoldMT', 'Arial', sans-serif;font-weight:700;font-size:54.167px;">Un poisson</text>
+            </g>
+            <g transform="matrix(2.95313,0,0,1.50113,-5309.5,1481.51)">
+                <text x="2038px" y="228.483px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:41.667px;">Un poisson vient passer</text>
+                <text x="2038px" y="271.513px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:41.667px;">dans le décors</text>
+            </g>
+            <g transform="matrix(0.34448,0,0,0.311302,187.19,1638.86)">
+                <path d="M636,452.5L403,641L403,264L636,452.5ZM636.299,452.236C642.457,446.829 743.269,359.472 879.093,315.101C1019.29,269.302 1196.79,269.302 1346,452.5L1345.12,453.571C1196.08,635.698 1019.01,635.607 879.093,589.899C738.895,544.099 636,452.5 636,452.5L636.299,452.236Z" style="fill:rgb(206,79,12);"/>
+            </g>
+            <g transform="matrix(2.95313,0,0,1.50113,-5095.72,1578.81)">
+                <rect x="1833.12" y="246" width="620.883" height="8" style="fill:rgb(33,33,33);"/>
+            </g>
+        </g>
+    </g>
+</svg>
