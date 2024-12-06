@@ -1,0 +1,32 @@
+[
+    {
+        "id": "easterEgg",
+        "name": "Easter Egg",
+        "description": "Obtenu en trouvant un œuf de Pâques caché quelque part sur le site.",
+        "image": "./assets/images/badgeOeuf.svg"
+    },
+    {
+        "id": "timeOnSite",
+        "name": "Le temps passe ...",
+        "description": "Obtenu après avoir passé 30 minutes sur le site.",
+        "image": "./assets/images/badgeTime.svg"
+    },
+    {
+        "id": "goodAnsweringQuizz",
+        "name": "Tout bon !",
+        "description": "Obtenu après avoir répondu correctement à toutes les questions d'un quiz.",
+        "image": "./assets/images/badgeQuizz.svg"
+    },
+    {
+        "id": "readAllTheSite",
+        "name": "Viktor",
+        "description": "Obtenu après avoir lu toutes les pages du site.",
+        "image": "./assets/images/badgeVu.svg"
+    },
+    {
+        "id": "completedSchema",
+        "name": "Schema complet",
+        "description": "Obtenu après avoir terminé le schéma",
+        "image": "./assets/images/badgeSchema.svg"
+    }
+]
