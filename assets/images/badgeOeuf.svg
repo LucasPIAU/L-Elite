@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 937 1182" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,-533.294,-109.449)">
+        <g transform="matrix(1,0,0,1,-230.165,-576.551)">
+            <g transform="matrix(0.78898,0,0,0.78898,145.815,144.76)">
+                <path d="M1376.5,686L1970.16,1060.25L1970.16,1808.75L1376.5,2183L782.84,1808.75L782.84,1060.25L1376.5,686Z" style="fill:rgb(198,141,0);"/>
+                <clipPath id="_clip1">
+                    <path d="M1376.5,686L1970.16,1060.25L1970.16,1808.75L1376.5,2183L782.84,1808.75L782.84,1060.25L1376.5,686Z"/>
+                </clipPath>
+                <g clip-path="url(#_clip1)">
+                    <g transform="matrix(1.26746,0,0,1.26746,-184.815,-183.478)">
+                        <rect x="667" y="560" width="564.845" height="1436" style="fill-opacity:0.1;"/>
+                    </g>
+                </g>
+            </g>
+            <g transform="matrix(0.712827,0,0,0.712827,250.639,254.001)">
+                <path d="M1376.5,686L1970.16,1060.25L1970.16,1808.75L1376.5,2183L782.84,1808.75L782.84,1060.25L1376.5,686Z" style="fill:rgb(255,182,0);"/>
+                <clipPath id="_clip2">
+                    <path d="M1376.5,686L1970.16,1060.25L1970.16,1808.75L1376.5,2183L782.84,1808.75L782.84,1060.25L1376.5,686Z"/>
+                </clipPath>
+                <g clip-path="url(#_clip2)">
+                    <g transform="matrix(1.68849,0,0,1.57812,-747.063,-595.776)">
+                        <ellipse cx="1257.67" cy="1286.52" rx="245.327" ry="262.484" style="fill:rgb(191,191,191);"/>
+                    </g>
+                    <g transform="matrix(1.35079,0,0,1.2625,-322.35,-187.688)">
+                        <ellipse cx="1257.67" cy="1286.52" rx="245.327" ry="262.484" style="fill:rgb(218,218,218);"/>
+                    </g>
+                    <g transform="matrix(1.1664,0,0,1.14022,-188.804,-225.299)">
+                        <path d="M1342,1129C1478.88,1129 1606,1329.76 1606,1502.21C1606,1674.67 1478.88,1753.94 1342,1753.94C1205.12,1753.94 1078,1674.67 1078,1502.21C1078,1329.76 1205.12,1129 1342,1129Z" style="fill:rgb(255,232,176);"/>
+                        <clipPath id="_clip3">
+                            <path d="M1342,1129C1478.88,1129 1606,1329.76 1606,1502.21C1606,1674.67 1478.88,1753.94 1342,1753.94C1205.12,1753.94 1078,1674.67 1078,1502.21C1078,1329.76 1205.12,1129 1342,1129Z"/>
+                        </clipPath>
+                        <g clip-path="url(#_clip3)">
+                            <g transform="matrix(1.20273,0,0,1.23034,3.54349,-159.208)">
+                                <ellipse cx="1279.5" cy="1171" rx="103.5" ry="107" style="fill:rgb(255,176,225);"/>
+                            </g>
+                            <g transform="matrix(0.470635,0,0,0.47144,615.34,911.558)">
+                                <ellipse cx="1279.5" cy="1171" rx="103.5" ry="107" style="fill:rgb(255,176,225);"/>
+                            </g>
+                            <g transform="matrix(1.20273,0,0,1.23034,-288.721,334.159)">
+                                <ellipse cx="1279.5" cy="1171" rx="103.5" ry="107" style="fill:rgb(255,176,225);"/>
+                            </g>
+                            <g transform="matrix(0.389291,0,0,0.448443,699.159,672.734)">
+                                <ellipse cx="1279.5" cy="1171" rx="103.5" ry="107" style="fill:rgb(255,176,225);"/>
+                            </g>
+                        </g>
+                    </g>
+                    <g transform="matrix(1.40286,0,0,1.40286,-351.612,-356.328)">
+                        <rect x="667" y="560" width="564.845" height="1436" style="fill-opacity:0.1;"/>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
