@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 621 148" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,-1825.97,-293)">
+        <g transform="matrix(0.338623,0,0,0.666165,1718.38,-459.749)">
+            <g transform="matrix(2.95313,0,0,1.50113,-5085.83,949.839)">
+                <path d="M2445,125.716C2445,122.561 2442.44,120 2439.28,120L2296.72,120C2293.56,120 2291,122.561 2291,125.716L2291,177.284C2291,180.439 2293.56,183 2296.72,183L2439.28,183C2442.44,183 2445,180.439 2445,177.284L2445,125.716Z" style="fill:rgb(16,98,205);"/>
+                <clipPath id="_clip1">
+                    <path d="M2445,125.716C2445,122.561 2442.44,120 2439.28,120L2296.72,120C2293.56,120 2291,122.561 2291,125.716L2291,177.284C2291,180.439 2293.56,183 2296.72,183L2439.28,183C2442.44,183 2445,180.439 2445,177.284L2445,125.716Z"/>
+                </clipPath>
+                <g clip-path="url(#_clip1)">
+                    <g transform="matrix(1,0,0,1,70.7988,1.24079)">
+                        <text x="2301px" y="170px" style="font-family:'Arial-BoldMT', 'Arial', sans-serif;font-weight:700;font-size:55.88px;fill:white;">10</text>
+                    </g>
+                </g>
+            </g>
+            <g transform="matrix(2.95313,0,0,1.50113,-5105.91,859.21)">
+                <text x="1831px" y="280px" style="font-family:'Arial-BoldMT', 'Arial', sans-serif;font-weight:700;font-size:99.187px;fill:rgb(205,44,0);">-1</text>
+            </g>
+            <g transform="matrix(2.95313,0,0,1.50113,-5336.26,916.814)">
+                <text x="2044px" y="189.709px" style="font-family:'Arial-BoldMT', 'Arial', sans-serif;font-weight:700;font-size:54.167px;">Soustraire</text>
+            </g>
+            <g transform="matrix(2.95313,0,0,1.50113,-5318.36,943.403)">
+                <text x="2038px" y="228.483px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:41.667px;">Enlève 1 à chaque clic</text>
+            </g>
+            <g transform="matrix(2.95313,0,0,1.50113,-5095.72,970.855)">
+                <rect x="1833.12" y="246" width="620.883" height="8" style="fill:rgb(33,33,33);"/>
+            </g>
+        </g>
+    </g>
+</svg>

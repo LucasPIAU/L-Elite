@@ -1,0 +1,617 @@
+body {
+    font-family: 'Roboto';
+    background-color: rgb(157, 196, 205);
+    width: 100%;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+/* Header styles */
+header {
+  background-color: transparent;
+  padding: 10px 20px;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+  height: 50px;
+}
+
+.navigation ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.navigation a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+}
+
+.navigation .button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.navigation button:hover {
+  background-color: #0056b3;
+}
+
+section {
+    position: relative;
+    z-index: 0;
+}
+
+#home {
+    height: 80vh;
+    background-color: rgb(157, 196, 205);
+    z-index: 1;
+
+    .topItem {
+    position: absolute;
+    left: 0;
+    height: 50%;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 1s;
+
+    &.animate{
+        transition: cubic-bezier(0.075, 0.82, 0.165, 1 ) 1s;
+        top: 0%;
+    }
+    &.beforePosition{
+        transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+        top: -100%;
+    }
+}
+}
+
+.rain-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Occupe toute la section #home */
+    overflow: hidden;
+    z-index: -1;
+}
+
+.rain-drop {
+    position: absolute;
+    width: 2px; /* Largeur réaliste d'une goutte */
+    height: 15px; /* Hauteur réaliste d'une goutte */
+    background: rgba(255, 255, 255, 0.7); /* Blanc translucide */
+    border-radius: 50%;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(10000%); /* Les gouttes tombent jusqu'en bas */
+    }
+}
+
+/* Conteneur pour le ciel */
+.sky-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, #87ceeb, #b0e0e6); /* Dégradé de ciel bleu clair */
+    overflow: hidden;
+    z-index: -1; /* Derrière le contenu */
+}
+
+/* Soleil */
+.sun {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 120px;
+    background: radial-gradient(circle, #ffeb3b, #fbc02d);
+    border-radius: 50%;
+    animation: pulse 5s infinite ease-in-out;
+}
+
+/* Animation de "pulsation" du soleil */
+@keyframes pulse {
+    0%, 100% {
+        transform: translateX(-50%) scale(1);
+    }
+    50% {
+        transform: translateX(-50%) scale(1.1);
+    }
+}
+
+/* Nuages */
+.cloud {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.1);
+    animation: moveClouds 15s infinite linear;
+    opacity: 0.8;
+}
+
+.cloud-1 { width: 300px; height: 150px; top: 10%; left: 50vw; animation-duration: 60s; animation-delay: 0s; }
+.cloud-2 { width: 250px; height: 120px; top: 20%; left: 25vw; animation-duration: 45s; animation-delay: 10s; }
+.cloud-3 { width: 280px; height: 140px; top: 50%; left: 80vw; animation-duration: 55s; animation-delay: 20s; }
+.cloud-4 { width: 220px; height: 110px; top: 30%; left: 70vw; animation-duration: 70s; animation-delay: 30s; }
+.cloud-5 { width: 260px; height: 130px; top: 70%; left: 60vw; animation-duration: 40s; animation-delay: 5s; }
+.cloud-6 { width: 240px; height: 120px; top: 80%; left: 50vw; animation-duration: 50s; animation-delay: 15s; }
+.cloud-7 { width: 300px; height: 150px; top: 10%; left: 10vw; animation-duration: 65s; animation-delay: 25s; }
+.cloud-8 { width: 250px; height: 130px; top: 60%; left: 90vw; animation-duration: 45s; animation-delay: 35s; }
+.cloud-9 { width: 280px; height: 140px; top: 40%; left: 30vw; animation-duration: 60s; animation-delay: 45s; }
+.cloud-10 { width: 220px; height: 110px; top: 20%; left: 5vw; animation-duration: 55s; animation-delay: 40s; }
+.cloud-11 { width: 270px; height: 140px; top: 50%; left: 50vw; animation-duration: 60s; animation-delay: 10s; }
+.cloud-12 { width: 230px; height: 120px; top: 20%; left: 80vw; animation-duration: 50s; animation-delay: 5s; }
+.cloud-13 { width: 290px; height: 160px; top: 70%; left: 100px; animation-duration: 45s; animation-delay: 15s; }
+.cloud-14 { width: 250px; height: 130px; top: 30%; left: 45vw; animation-duration: 60s; animation-delay: 25s; }
+.cloud-15 { width: 320px; height: 180px; top: 60%; left: 35vw; animation-duration: 70s; animation-delay: 30s; }
+
+@keyframes moveClouds {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(120%); } /* Les nuages traversent l'écran */
+}
+
+.lightning {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(to bottom, #fff, #fff, rgba(255, 255, 255, 0)); /* Éclair brillant */
+    box-shadow: 0 0 50px rgba(255, 255, 255, 0.9); /* Halo lumineux autour de l'éclair */
+    animation: lightningFlash 0.5s infinite ease-in-out, flicker 0.1s infinite;
+    opacity: 0;
+    transform: translateX(-50%);
+}
+
+/* Animation d'apparition de l'éclair */
+@keyframes lightningFlash {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+/* Animation pour créer l'effet de crépitement de l'éclair */
+@keyframes flicker {
+    0% { opacity: 1; }
+    50% { opacity: 0.7; }
+    100% { opacity: 1; }
+}
+
+/* Durée et délai de l'éclair aléatoire */
+@keyframes randomFlash {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Conteneur pour les flocons de neige */
+.snow-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Derrière le contenu */
+    pointer-events: none; /* La neige n'interfère pas avec les autres éléments */
+}
+
+/* Flocons de neige */
+.snowflake {
+    position: absolute;
+    top: -10px;
+    background-color: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: fall 10s linear infinite, drift 10s ease-in-out infinite;
+}
+
+/* Animation de la chute de neige */
+@keyframes fall {
+    0% { top: -10px; }
+    100% { top: 100vh; } /* Les flocons tombent jusqu'en bas de l'écran */
+}
+
+/* Animation du mouvement latéral des flocons */
+@keyframes drift {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(50px); } /* Déplacement horizontal */
+    100% { transform: translateX(-50px); } /* Déplacement horizontal inverse */
+}
+
+#weather-info-container {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent pour le texte */
+    border-radius: 8px;
+}
+
+#weather-info {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Conteneur général pour les visualisations graphiques */
+.weather-visual-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+}
+
+/* Barre de température avec animation */
+.temperature-bar-container {
+    width: 80%;
+    height: 20px;
+    background-color: #ddd;
+    position: relative;
+}
+
+#temperature-bar {
+    width: 0%; /* La largeur sera animée */
+    height: 100%;
+    background-color: #ff4500; /* Couleur pour la température chaude */
+    border-radius: 5px;
+}
+
+#temperature-label {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Flèches animées pour la vitesse du vent */
+.wind-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#wind-arrow {
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 30px solid #00bfff; /* Couleur pour le vent */
+    animation: spin 3s linear infinite;
+}
+
+#wind-label {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Animation de la flèche de vent */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+h1 {
+    position: relative;
+    font-size: 4rem;
+    z-index: 30;
+    height: 50%;
+    display: flex;
+    align-items: center;
+}
+
+  cite{
+    font-size: 2rem;
+    position: absolute;
+    top: 80%;
+    left: 52%;
+    transform: translate(-50%, -50%);
+    white-space: normal;
+    width: 100%;
+    height: auto;
+  }
+
+.bottom1{
+    &::before{
+        content: "";
+        width: 100%;
+        height: 130%;
+    position: absolute;
+    top: -10%;
+    background-image: url("assets/images/bottom1.svg");
+    background-size: cover;
+    z-index: 0;
+}
+}
+.bodyOceanContainer {
+    padding-top: 1rem;
+    height: 50vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.bodyContainer {
+    width: min-content;
+    height: 100%;
+    width: 30%;
+    min-width: 30%;
+    min-height: 100%;
+    background-image: url("assets/images/Silhouette.svg");
+    background-repeat: no-repeat;
+    position: relative;
+    background-position: center;   
+    background-position: center;
+}
+
+.explications {
+    position: relative;
+    z-index: 5;
+    width: 33%;
+    left: 0;
+}
+
+.explications * {
+    font-size: 1rem;
+}
+
+.illustrationCorps {
+    object-fit: contain;
+    width: 100%;
+    margin-right: 0;
+    margin-top: 0;
+}
+
+.organImg {
+    cursor: pointer;
+    height: 20%;
+    position: absolute;
+    filter: grayscale(80%);
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 1s;
+}
+
+.organImg:hover {
+    filter: grayscale(0%);
+    transform: scale(1.1);
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 1s;
+}
+
+.organImg.heart {
+    height: 22%;
+    top: 18%;
+    right: 35%;
+    z-index: 1;
+}
+
+.organImg.heart:hover {
+    filter: grayscale(0%);
+    transform: scale(1.1);
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 1s;
+}
+
+.organImg.lungs {
+    height: 40%;
+    top: 8%;
+    left: 33%;
+}
+
+.organImg.stomach {
+    height: 35%;
+    top: 40%;
+    left: 33%;
+}
+
+.facts-and-articles {
+    margin-bottom: 20%;
+    position: relative;
+    z-index: 5;
+    padding: 2rem;
+    border-radius: 8px;
+    margin: 20px auto;
+    max-width: 100%;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+.facts-and-articles::before {
+    content: "";
+    width: 100%;
+    height: 120%;
+    position: absolute;
+    left: 0;
+    top: -10%;
+    background-image: url("assets/images/bottom2.svg");
+    background-size: cover;
+    z-index: 0;
+}
+
+.facts-and-articles h2 {
+    position: relative;
+    z-index: 5;
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    color: #0077cc;
+}
+
+.facts-list,
+.articles-list {
+    position: relative;
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+.facts-list li {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    color: #555;
+}
+
+.articles-list li {
+    margin-bottom: 10px;
+    list-style-type: none;
+}
+
+.articles-list a {
+    color: #0077cc;
+    text-decoration: none;
+    font-size: 1.1em;
+}
+
+.articles-list a:hover {
+    text-decoration: underline;
+}
+
+.source {
+    font-style: italic;
+    color: #777;
+    font-size: 0.9em;
+}
+
+.quiz {
+    background-image: url("assets/images/bottom3.svg");
+}
+
+#question-container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 30px auto;
+  width: 80%;
+  max-width: 600px;
+}
+
+.quiz-options {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.quiz-options li {
+  margin: 10px 0;
+  cursor: pointer;
+  padding: 10px;
+  background-color: #e1f5fe;
+  border-radius: 5px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.quiz-options li:hover {
+  background-color: #81d4fa;
+  transform: scale(1.05);
+}
+
+.quiz-options input[type="radio"] {
+  margin-right: 10px;
+}
+
+.quiz-options li.selected {
+  background-color: #81d4fa;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #004d40;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+  display: block;
+  width: 200px;
+  margin: 20px auto;
+  transition: background-color 0.3s;
+}
+
+input[type="radio"] {
+  visibility: hidden;
+  position: absolute;
+}
+
+button:hover {
+  background-color: #00796b;
+}
+
+button:disabled {
+  background-color: #c8e6c9;
+  cursor: not-allowed;
+}
+
+button:focus {
+  outline: none;
+}
+
+.quiz-options li.correct {
+  background-color: #388e3c;
+  color: white;
+}
+
+.quiz-options li.incorrect {
+  background-color: #d32f2f;
+  color: white;
+}
+
+#final-score {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #004d40;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 30px;
+}
+#quiz{
+    position: relative;
+}
+.bottom3{
+        content: "";
+        width: 100%;
+        height: 130%;
+    position: absolute;
+    top: -20%;
+    background-image: url("assets/images/bottom3.svg");
+    background-size: cover;
+    z-index: 0;
+}
+
+.clicker{
+    font-size: 1.3rem;
+    color: red;
+}

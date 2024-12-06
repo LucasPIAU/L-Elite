@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    font-family: "Poppins", serif;
+    font-weight: 800;
+
+}
+html{
+    height: 100%;
+}
+body{
+    height: 100%;
+    margin: 0;
+}
+header{
+    height: 10%;
+}
+main{
+    height: 88%;
+    display: flex;
+    margin: 0 25px 25px 25px;
+    gap: 15px;
+}
+.userInfos-container{
+    height: 100;
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    gap: 15px;
+}
+.profil-view{
+    width: 65%;
+}
+.userInfos{
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    background-color: #0059FF;
+    justify-content: center;
+    color: white;
+    border-radius: 15px;
+    padding: 25px 0;                                                
+}
+.userInfos div{
+    display: flex;
+    justify-content: center;
+}
+.profil-picture{
+    display: flex;
+    width: 40%;
+    clip-path: circle(50%);
+}
+#userNameDisplay{
+    display: flex;
+    justify-content: center;
+}
+.history-container{
+    display: flex;
+    flex-direction: column;
+    background-color: #0059FF;
+    color: white;
+    border-radius: 15px;
+    padding: 15px 25px;
+    height: 70%;
+}
+.score{
+    display: flex;
+    flex-direction: column;
+    background-color: #0059FF;
+    color: white;
+    border-radius: 15px;
+    padding: 15px 25px;
+}
+.profil-view{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.badges{
+    display: flex;
+    flex-direction: column;
+    background-color: #0059FF;
+    color: white;
+    border-radius: 15px;
+    padding: 15px 25px;
+}
+
+.badge-locked img{
+    filter: grayscale(1);
+    width: 100px;
+}
+
+.badge-owned img{
+    width: 100px;
+}
+
+#badges-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 20px;
+    column-gap: 20px;
+    text-align: center;
+}
+
+#badges-container div{
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 25px;
+    color: #0059FF;
+    display: grid;
+    justify-items: center;
+}
+
+#badges-container h4{
+    margin: -15px 0 10px 0;
+    padding: 0;
+    font-size: 30px;
+}

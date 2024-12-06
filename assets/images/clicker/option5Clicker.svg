@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 621 187" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,-1825.97,-1203)">
+        <g transform="matrix(0.338623,0,0,0.666165,1718.38,-459.749)">
+            <g transform="matrix(2.95313,0,0,1.50113,-5085.83,2343.46)">
+                <path d="M2445,125.716C2445,122.561 2442.44,120 2439.28,120L2296.72,120C2293.56,120 2291,122.561 2291,125.716L2291,177.284C2291,180.439 2293.56,183 2296.72,183L2439.28,183C2442.44,183 2445,180.439 2445,177.284L2445,125.716Z" style="fill:rgb(16,98,205);"/>
+                <clipPath id="_clip1">
+                    <path d="M2445,125.716C2445,122.561 2442.44,120 2439.28,120L2296.72,120C2293.56,120 2291,122.561 2291,125.716L2291,177.284C2291,180.439 2293.56,183 2296.72,183L2439.28,183C2442.44,183 2445,180.439 2445,177.284L2445,125.716Z"/>
+                </clipPath>
+                <g clip-path="url(#_clip1)">
+                    <g transform="matrix(1,0,0,1,41.7988,1.24079)">
+                        <text x="2301px" y="170px" style="font-family:'Arial-BoldMT', 'Arial', sans-serif;font-weight:700;font-size:55.88px;fill:white;">500</text>
+                    </g>
+                </g>
+            </g>
+            <g transform="matrix(2.95313,0,0,1.50113,-5327.4,2330.08)">
+                <text x="2044px" y="189.709px" style="font-family:'Arial-BoldMT', 'Arial', sans-serif;font-weight:700;font-size:54.167px;">T<tspan x="2074.1px 2095.18px " y="189.709px 189.709px ">ru</tspan>c cher</text>
+            </g>
+            <g transform="matrix(2.95313,0,0,1.50113,-5309.5,2356.67)">
+                <text x="2038px" y="228.483px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:41.667px;">C&apos;est cher<tspan x="2221.96px 2233.54px " y="228.483px 228.483px ">, </tspan>mais est-ce</text>
+                <text x="2038px" y="271.513px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:41.667px;">que c&apos;est bien?</text>
+            </g>
+            <g transform="matrix(0.522756,0,0,0.265726,-171.519,2454.71)">
+                <g transform="matrix(1,0,0,1,-7.34252,-5)">
+                    <rect x="1218" y="819" width="59" height="116" style="fill:rgb(206,79,12);"/>
+                </g>
+                <path d="M1533.89,503.271C1533.89,503.271 1609.23,734.036 1384.05,757.503C1363.48,796.778 1322.65,834.01 1241.66,832.012C1160.76,834.008 1119.93,796.871 1099.34,757.656C872.323,735.06 948,503.271 948,503.271L1078.48,503.271L1078.5,503.308L1078.5,503.271L1533.89,503.271ZM1078.5,527.636L969,527.636C920.039,709.629 1063.08,727.166 1087.51,728.828C1077.59,696.921 1078.5,670 1078.5,670L1078.5,527.636ZM1404.82,527.636L1512.89,527.636C1560.96,706.311 1423.97,726.471 1395.84,728.72C1405.72,696.868 1404.82,670 1404.82,670L1404.82,527.636Z" style="fill:rgb(195,158,0);"/>
+                <g transform="matrix(1,0,0,1,-4.34252,2)">
+                    <rect x="1102" y="910" width="285" height="112" style="fill:rgb(195,158,0);"/>
+                </g>
+                <g transform="matrix(1.49825,0,0,0.607143,-623.621,471.5)">
+                    <rect x="1102" y="910" width="285" height="112" style="fill:rgb(206,79,12);"/>
+                </g>
+            </g>
+            <g transform="matrix(2.95313,0,0,1.50113,-5095.72,2126.72)">
+                <rect x="1833.12" y="246" width="620.883" height="8" style="fill:rgb(33,33,33);"/>
+            </g>
+        </g>
+    </g>
+</svg>
