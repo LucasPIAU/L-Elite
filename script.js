@@ -1,11 +1,11 @@
 const words = ["arbre", "soleil", "chocolat", "ordinateur", "python", "javascript"];
 let targetWord = "";
-let currentHash = "";
+let shuffledString = "";
 let selectedPortions = [];
 let interval;
 let isCounterRunning = false;
 let previousNumber = null;
-const COUNTDOWNTIME = 10
+const COUNTDOWNTIME = 10;
 let remainingTime;
 let countdownInterval;
 let initialOrder = [];
@@ -13,14 +13,13 @@ const infoIcon = document.getElementById("info-icon");
 const modal = document.getElementById("info-modal");
 const closeModal = document.getElementsByClassName("close")[0];
 
-
 // Fonction pour mélanger une chaîne de caractères
 function shuffleString(str) {
     return str.split("").sort(() => Math.random() - 0.5).join("");
 }
 
-// Générer un hash contenant toutes les lettres de l'alphabet
-function generateHash() {
+// Générer un string mélangé contenant toutes les lettres de l'alphabet
+function generateShuffledString() {
     const alphabet = "abcdefghijklmnopqrstuvwxyz";
     return shuffleString(alphabet.repeat(2));
 }
@@ -39,42 +38,44 @@ function generateUniqueRandom(min, max) {
 function initGame() {
     targetWord = words[Math.floor(Math.random() * words.length)];
     document.getElementById("target-word").textContent = targetWord;
-    currentHash = "";
+    shuffledString = "";
     selectedPortions = [];
     previousNumber = null;
-    document.getElementById("hash").textContent = "";
+    document.getElementById("shuffledString").textContent = "";
     document.getElementById("selected-portions").innerHTML = "";
     document.getElementById("reconstruction-zone").innerHTML = "";
     document.getElementById("result").textContent = "";
     document.getElementById("stop-counter").disabled = true;
+    document.getElementById("generate-shuffledString").disabled = false;
     document.getElementById("check-word").disabled = true;
     isCounterRunning = false;
     remainingTime = COUNTDOWNTIME;
     startCountdown();
 }
 
-// Gérer le clic sur "Générer un hash"
-document.getElementById("generate-hash").addEventListener("click", () => {
-    currentHash = generateHash();
-    document.getElementById("hash").textContent = currentHash;
+// Gérer le clic sur "Générer un shuffled string"
+document.getElementById("generate-shuffledString").addEventListener("click", () => {
+    shuffledString = generateShuffledString();
+    document.getElementById("shuffledString").textContent = shuffledString;
     document.getElementById("stop-counter").disabled = true;
+    document.getElementById("generate-shuffledString").disabled = true;
 
     // Réinitialiser le compteur
     clearInterval(interval);
     document.getElementById("counter").textContent = "";
 
     // Démarrer le "compteur" après un délai de 2 secondes
-    setTimeout(() => {
-        isCounterRunning = true;
-        document.getElementById("stop-counter").disabled = false;
+
+    isCounterRunning = true;
+    document.getElementById("stop-counter").disabled = false;
+    const randomValue = generateUniqueRandom(1, targetWord.length);
+    document.getElementById("counter").textContent = randomValue;
+
+    interval = setInterval(() => {
         const randomValue = generateUniqueRandom(1, targetWord.length);
         document.getElementById("counter").textContent = randomValue;
+    }, 500); // Changement toutes les 500 ms
 
-        interval = setInterval(() => {
-            const randomValue = generateUniqueRandom(1, targetWord.length);
-            document.getElementById("counter").textContent = randomValue;
-        }, 500); // Changement toutes les 500 ms
-    }, 2000); // Délai de 2 secondes
 });
 
 // Gérer le clic sur "Stop!"
@@ -84,41 +85,42 @@ document.getElementById("stop-counter").addEventListener("click", () => {
     clearInterval(interval);
     isCounterRunning = false;
     document.getElementById("stop-counter").disabled = true;
+    document.getElementById("generate-shuffledString").disabled = false;
 
-    // Permettre à l'utilisateur de choisir une partie du hash
-    const hashElement = document.getElementById("hash");
-    hashElement.style.cursor = "pointer";
+    // Permettre à l'utilisateur de choisir une partie du shuffled string
+    const shuffledStringElement = document.getElementById("shuffledString");
+    shuffledStringElement.style.cursor = "pointer";
 
     // Ajouter gestion survol pour prévisualiser
-    hashElement.addEventListener("mousemove", handleHashHover);
-    hashElement.addEventListener("click", handleHashClick);
+    shuffledStringElement.addEventListener("mousemove", handleShuffledStringHover);
+    shuffledStringElement.addEventListener("click", handleShuffledStringClick);
 });
 
-// Gérer le survol du hash pour prévisualiser une portion
-function handleHashHover(event) {
-    const hashElement = document.getElementById("hash");
-    const startIndex = getCharIndexFromMouse(event, hashElement);
+// Gérer le survol du shuffled string pour prévisualiser une portion
+function handleShuffledStringHover(event) {
+    const shuffledStringElement = document.getElementById("shuffledString");
+    const startIndex = getCharIndexFromMouse(event, shuffledStringElement);
     const length = parseInt(document.getElementById("counter").textContent, 10) || 0;
-    const endIndex = Math.min(startIndex + length, currentHash.length);
+    const endIndex = Math.min(startIndex + length, shuffledString.length);
 
     // Mettre en surbrillance la portion prévisualisée
-    const highlightedHash =
-        currentHash.slice(0, startIndex) +
-        `<span class="highlight">${currentHash.slice(startIndex, endIndex)}</span>` +
-        currentHash.slice(endIndex);
+    const highlightedShuffledString =
+        shuffledString.slice(0, startIndex) +
+        `<span class="highlight">${shuffledString.slice(startIndex, endIndex)}</span>` +
+        shuffledString.slice(endIndex);
 
-    hashElement.innerHTML = highlightedHash;
+    shuffledStringElement.innerHTML = highlightedShuffledString;
 }
 
-// Gérer le clic sur le hash pour confirmer une portion
-function handleHashClick(event) {
-    const hashElement = document.getElementById("hash");
-    const startIndex = getCharIndexFromMouse(event, hashElement);
+// Gérer le clic sur le shuffled string pour confirmer une portion
+function handleShuffledStringClick(event) {
+    const shuffledStringElement = document.getElementById("shuffledString");
+    const startIndex = getCharIndexFromMouse(event, shuffledStringElement);
     const length = parseInt(document.getElementById("counter").textContent, 10) || 0;
-    const endIndex = Math.min(startIndex + length, currentHash.length);
+    const endIndex = Math.min(startIndex + length, shuffledString.length);
 
     // Extraire la portion
-    const selection = currentHash.slice(startIndex, endIndex);
+    const selection = shuffledString.slice(startIndex, endIndex);
     selectedPortions.push(selection);
 
     // Afficher la portion sélectionnée
@@ -139,11 +141,11 @@ function handleHashClick(event) {
 
     document.getElementById("selected-portions").appendChild(portionDiv);
 
-    // Réinitialiser le hash et désactiver les événements
-    hashElement.textContent = currentHash;
-    hashElement.style.cursor = "default";
-    hashElement.removeEventListener("mousemove", handleHashHover);
-    hashElement.removeEventListener("click", handleHashClick);
+    // Réinitialiser le shuffled string et désactiver les événements
+    shuffledStringElement.textContent = shuffledString;
+    shuffledStringElement.style.cursor = "default";
+    shuffledStringElement.removeEventListener("mousemove", handleShuffledStringHover);
+    shuffledStringElement.removeEventListener("click", handleShuffledStringClick);
 
     document.getElementById("check-word").disabled = false;
 }
@@ -152,7 +154,7 @@ function handleHashClick(event) {
 function getCharIndexFromMouse(event, element) {
     const rect = element.getBoundingClientRect();
     const relativeX = event.clientX - rect.left;
-    const charWidth = rect.width / currentHash.length;
+    const charWidth = rect.width / shuffledString.length;
     return Math.floor(relativeX / charWidth);
 }
 
@@ -230,7 +232,7 @@ function shuffleReconstructionZone() {
             reconstructionZone.appendChild(block);
         }); // Vérifier si l'ordre est différent
     }
-   
+
     remainingTime = COUNTDOWNTIME;
     startCountdown();
 }
@@ -260,7 +262,6 @@ window.addEventListener("click", (event) => {
         modal.style.display = "none";
     }
 });
-
 
 // Initialisation
 initGame();
