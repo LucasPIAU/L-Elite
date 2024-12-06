@@ -1,6 +1,6 @@
 // Génération aléatoire de photo de profil
 const profilePictures = [
-    './profilPictures/image1.jpg', 
+    './profilPictures/image1.jpg',
     './profilPictures/image2.jpg',
     './profilPictures/image3.jpg'
 ];
@@ -20,17 +20,78 @@ function setRandomProfilePicture() {
 }
 document.addEventListener('DOMContentLoaded', setRandomProfilePicture);
 
-// ----------------------- Récupération du pseudo ---------------------------
+// ----------------------- Récupération du pseudo et Badges ---------------------------
 
 document.addEventListener('DOMContentLoaded', function () {
     const userName = localStorage.getItem('userName');
+    const localStorageBadgesIds = localStorage.getItem('localStorageBadgesIds');
+    let ownedBadges = [];
+    let lockedBadges = [];
+
 
     if (userName) {
         document.getElementById('userNameDisplay').textContent = userName;
     } else {
-        document.getElementById('userNameDisplay').textContent = 'Utilisateur inconnu';
+        window.location.href = "firstConnexion.html";
+        return;
     }
+
+
+    const badgesFromLocalStorage = localStorageBadgesIds ? JSON.parse(localStorageBadgesIds) : [];
+
+
+    fetch('badges.json') 
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Failed to load badges JSON');
+            }
+            return response.json(); 
+        })
+        .then(badges => {
+
+            badges.forEach(badge => {
+                if (badgesFromLocalStorage.includes(badge.id)) {
+                    ownedBadges.push(badge);
+                } else {
+                    lockedBadges.push(badge); 
+                }
+            });
+
+            console.log('Owned Badges:', ownedBadges);
+            console.log('Locked Badges:', lockedBadges);
+
+            const ownedBadgesContainer = document.getElementById('ownedBadges');
+            const lockedBadgesContainer = document.getElementById('lockedBadges');
+
+            ownedBadges.forEach(badge => createBadge(badge, true));
+            lockedBadges.forEach(badge => createBadge(badge, false));
+
+            
+        })
+        .catch(error => {
+            console.error('Error fetching badges JSON:', error);
+        });
 });
+
+function createBadge(badge, owned){
+    const badgeElement = document.createElement('div');
+    if (owned) {
+        badgeElement.classList.add('badge-owned');
+    }else{
+        badgeElement.classList.add('badge-locked');
+    }
+    const badgeTitle = document.createElement('h4');
+    badgeTitle.textContent = badge.name;
+    badgeElement.appendChild(badgeTitle);
+    const badgeImage = document.createElement('img');
+    badgeImage.src = badge.image;
+    badgeElement.appendChild(badgeImage);
+    const badgeDesc = document.createElement("p");
+    badgeDesc.textContent = badge.description;
+    badgeElement.appendChild(badgeDesc);
+    document.getElementById("badges-container").appendChild(badgeElement);
+
+}
 
 // ----------------------- Gestion des points ---------------------------
 
@@ -49,7 +110,7 @@ function updatePoints(points) {
 // Fonction pour ajouter des points
 function addPoints(pointsToAdd) {
     const currentPoints = getPoints();
-    const newPoints = currentPoints + pointsToAdd; 
+    const newPoints = currentPoints + pointsToAdd;
     updatePoints(newPoints);  // Met à jour les points dans le localStorage
 }
 
