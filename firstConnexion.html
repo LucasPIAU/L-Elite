@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Username</title>
+    <link rel="stylesheet" href="firstConnexion.css" />
+  </head>
+  <body>
+    <div class="containerName">
+      <h1>Entrez votre prénom</h1>
+      <input type="text" id="userNameInput" placeholder="Votre prénom" />
+      <button id="continue">Continuer</button>
+    </div>
+    <script>
+      const userName = localStorage.getItem("userName");
+      if (userName) {
+        document.getElementById("userNameInput").value = userName;
+      }
+
+      document.getElementById("continue").addEventListener("click", () => {
+        const userNameInput = document.getElementById("userNameInput").value;
+
+        if (userNameInput) {
+          localStorage.setItem("userName", userNameInput); 
+          window.location.href = "index.html"; 
+        } else {
+          alert("Veuillez entrer un prénom");
+        }
+      });
+    </script>
+  </body>
+</html>
