@@ -610,3 +610,8 @@ button:focus {
     background-size: cover;
     z-index: 0;
 }
+
+.clicker{
+    font-size: 1.3rem;
+    color: red;
+}
