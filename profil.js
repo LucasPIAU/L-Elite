@@ -38,6 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     const badgesFromLocalStorage = localStorageBadgesIds ? JSON.parse(localStorageBadgesIds) : [];
+    console.log(badgesFromLocalStorage);
 
 
     fetch('badges.json') 
@@ -57,9 +58,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             });
 
-            console.log('Owned Badges:', ownedBadges);
-            console.log('Locked Badges:', lockedBadges);
-
+            console.log(ownedBadges);
+            console.log(lockedBadges);
+            
             const ownedBadgesContainer = document.getElementById('ownedBadges');
             const lockedBadgesContainer = document.getElementById('lockedBadges');
 

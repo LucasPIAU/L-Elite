@@ -206,6 +206,10 @@ document.addEventListener('DOMContentLoaded', function () {
     questionContainer.innerHTML = `<p>Félicitations, vous avez terminé le quiz !</p><p>Votre score final est de ${score} sur ${questions.length}.</p>`;
     nextButton.style.display = 'none';
     replayButton.style.display = 'block';
+    if (score >= questions.length) {
+      addBadgeToLocalStorage("goodAnsweringQuizz");
+      questionContainer.innerHTML +="<p>Félicitations, vous avez obtenu le badge du quizz !</p>";
+    }
   }
 
   function replay() {
@@ -220,3 +224,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
   displayQuestion();
 });
+
+function addBadgeToLocalStorage(badgeId) {
+  let currentBadges = JSON.parse(localStorage.getItem('localStorageBadgesIds')) || [];
+
+  if (!currentBadges.includes(badgeId)) {
+      currentBadges.push(badgeId); 
+  }
+
+  localStorage.setItem('localStorageBadgesIds', JSON.stringify(currentBadges));
+}

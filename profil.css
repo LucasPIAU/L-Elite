@@ -90,6 +90,10 @@ main{
     width: 100px;
 }
 
+.badge-owned img{
+    width: 100px;
+}
+
 #badges-container{
     display: grid;
     grid-template-columns: 1fr 1fr;
