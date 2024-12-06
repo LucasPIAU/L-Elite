@@ -2,21 +2,43 @@
 *{
     font-family: "Poppins", serif;
     font-weight: 800;
-}
 
+}
+html{
+    height: 100%;
+}
+body{
+    height: 100%;
+    margin: 0;
+}
+header{
+    height: 10%;
+}
+main{
+    height: 88%;
+    display: flex;
+    margin: 0 25px 25px 25px;
+    gap: 15px;
+}
 .userInfos-container{
-    width: 30%;
+    height: 100;
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    gap: 15px;
 }
 .profil-view{
-    width: 70%;
+    width: 65%;
 }
 .userInfos{
+    height: 30%;
     display: flex;
     flex-direction: column;
     background-color: #0059FF;
+    justify-content: center;
     color: white;
-    border-radius: 25px;
-    padding: 25px;
+    border-radius: 15px;
+    padding: 25px 0;                                                
 }
 .userInfos div{
     display: flex;
@@ -30,4 +52,36 @@
 #userNameDisplay{
     display: flex;
     justify-content: center;
+}
+.history-container{
+    display: flex;
+    flex-direction: column;
+    background-color: #0059FF;
+    color: white;
+    border-radius: 15px;
+    padding: 15px 25px;
+    height: 70%;
+}
+.score{
+    display: flex;
+    flex-direction: column;
+    background-color: #0059FF;
+    color: white;
+    border-radius: 15px;
+    padding: 15px 25px;
+}
+.profil-view{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.badges{
+    display: flex;
+    flex-direction: column;
+    background-color: #0059FF;
+    color: white;
+    border-radius: 15px;
+    padding: 15px 25px;
+    height: 100%;
 }
