@@ -6,17 +6,49 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <script src="./humain.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet" />
+    <script src="./meteo.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
     <title>Super ocean pro max mes couilles</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header></header>
     <main>
-      <section id="home">
-        <h1>Et si les océans étaient le corps de notre planète ?</h1>
-        <cite>"Comme notre corps, l’océan est un système complexe.</br>Quand il est pollué, il se dérègle.</br>Découvrez comment ils fonctionnent en parallèle."</cite>
-      </section>
+        <section id="home">
+            <div class="rain-container"></div>
+            
+            <div class="topItem beforePosition"></div>
+            <h1>Et si les océans étaient le corps de notre planète ?</h1>
+            <cite>
+                Comme notre corps, l’océan est un système complexe. Quand il est
+                pollué, il se dérègle. Découvrez comment ils fonctionnent en parallèle.
+            </cite>
+            <div id="weather-info-container">
+                <p id="weather-info">Chargement des informations météo...</p>
+            </div>
+            <div class="weather-visual-container">
+                <!-- Barre de température -->
+                <div class="temperature-bar-container">
+                    <div id="temperature-bar"></div>
+                    <span id="temperature-label">Température</span>
+                </div>
+        
+                <!-- Animation pour la vitesse du vent -->
+                <div class="wind-container">
+                    <div id="wind-arrow"></div>
+                    <span id="wind-label">Vitesse du vent</span>
+                </div>
+            </div>
+        
+            <div class="chart-container">
+                <canvas id="weather-chart" width="400" height="200"></canvas>
+            </div>
+        </section>
       <section id="bodyOcean" class="bottom1">
         <h2>Le fonctionnement de l'ocean</h2>
         <div class="bodyOceanContainer">
@@ -100,7 +132,7 @@
     
     
     
-      <section id="contact">
+      <section id="Quizz">
         <h2>Contact</h2>
         <p>Comment nous contacter.</p>
       </section>

@@ -4,7 +4,7 @@
     <g transform="matrix(1,0,0,1,-106.299,-162.346)">
         <g transform="matrix(1.34983,0,0,2.93239,-104.274,-3294.94)">
             <g id="Pluie" transform="matrix(0.740833,0,0,0.341019,77.25,1123.64)">
-                <rect x="106.299" y="162.346" width="2267.72" height="1071.42" style="fill:white;"/>
+                <rect x="106.299" y="162.346" width="2267.72" height="1071.42" style="fill:none;"/>
                 <clipPath id="_clip1">
                     <rect x="106.299" y="162.346" width="2267.72" height="1071.42"/>
                 </clipPath>
