@@ -14,6 +14,10 @@ section {
     z-index: 1;
 }
 
+.quiz-title{
+    margin-top: 50px;
+}
+
 #home {
     height: 80vh;
     background-color: rgb(157, 196, 205);
