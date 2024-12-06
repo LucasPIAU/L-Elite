@@ -1,0 +1,53 @@
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Roboto, Helvetica, sans-serif;
+    background-color: #f1f1f1;
+    max-width: 100vw;
+    max-height: 100vh;
+}
+
+main {
+    width: 100vw;
+    height: 100vh;
+    
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 1fr;
+}
+
+.menu-centre{
+    background-image: url('./assets/images/clicker/fondClicker.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.menu-gauche, .menu-droite{
+    background-color: black;
+}
+
+.menu-perso {
+    display: none;
+    width: 200px;
+    box-shadow: 0 5px 15px #1111118c;
+    position: fixed;
+}
+
+.menu-perso button {
+    width: 100%;
+    text-align: left;
+    background-color: #111;
+    color: #e7e7e7;
+    font-size: 14px;
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+}
+
+.menu-perso button:hover{
+    background-color: #1d73cf;
+}
