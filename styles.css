@@ -1,7 +1,9 @@
 body {
     font-family: 'Roboto';
     background-color: rgb(157, 196, 205);
+    width: 100%;
 }
+
 
 * {
     margin: 0;
@@ -63,7 +65,7 @@ header {
 
 section {
     position: relative;
-    z-index: 1;
+    z-index: 0;
 }
 
 #home {
@@ -594,4 +596,17 @@ button:focus {
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin-top: 30px;
+}
+#quiz{
+    position: relative;
+}
+.bottom3{
+        content: "";
+        width: 100%;
+        height: 130%;
+    position: absolute;
+    top: -20%;
+    background-image: url("assets/images/bottom3.svg");
+    background-size: cover;
+    z-index: 0;
 }
